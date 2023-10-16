@@ -1,0 +1,58 @@
+{
+  "id": "4285516",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12875822",
+      "name": "lang",
+      "font_class": "lang",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "37668586",
+      "name": "nav-list",
+      "font_class": "navlist",
+      "unicode": "ed96",
+      "unicode_decimal": 60822
+    },
+    {
+      "icon_id": "37669454",
+      "name": "save",
+      "font_class": "save-copy",
+      "unicode": "ed97",
+      "unicode_decimal": 60823
+    },
+    {
+      "icon_id": "37669458",
+      "name": "load",
+      "font_class": "load-copy",
+      "unicode": "ed98",
+      "unicode_decimal": 60824
+    },
+    {
+      "icon_id": "37668483",
+      "name": "Layer",
+      "font_class": "Layers",
+      "unicode": "ed93",
+      "unicode_decimal": 60819
+    },
+    {
+      "icon_id": "37668488",
+      "name": "export",
+      "font_class": "export",
+      "unicode": "ed94",
+      "unicode_decimal": 60820
+    },
+    {
+      "icon_id": "37668424",
+      "name": "loss",
+      "font_class": "loss",
+      "unicode": "ed91",
+      "unicode_decimal": 60817
+    }
+  ]
+}

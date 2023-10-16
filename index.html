@@ -4,144 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyDeepLearning</title>
-    <style>
-        * {
-            /* margin: 0; */
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background-color: rgb(180, 217, 240);  
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            position: relative;
-        }
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" href="./nav-shell.css">
 
-        .banner{
-            height: 30px;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color:rgb(217, 210, 255);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .title{
-            font-size: 15px;
-            color:rgb(69, 0, 0);
-        }
-        .shell{
-            border-radius: 10px;
-            box-shadow: 5px 5px rgba(198, 198, 216, 0.929);
-            position: absolute;
-            top: 30px;
-            background-color: rgb(172, 145, 252);
-            width: 280px;
-            height: 530px;
-            display: flex;
-            align-items: center;
-        }
-        .li{
-            font: 600 17px '';
-            letter-spacing: 2px;
-            color: rgb(255, 255, 255);
-            padding: 16px 52px;
-            transition: .3s;
-        }
-        .li::after{
-            content: '';
-            position: absolute;
-            left: 20px;
-            margin-top: -22px;
-            display: block;
-            width: 20px;
-            height: 20px;
-            background-color: #fff;
-            border-radius: 50%;
-        }
-        .buttons>li:hover{
-            background-color: rgba(214, 145, 252, 0.644);
-        }
-        .li ul{
-            width: 0;
-            height: 530px;
-            padding: 60px 0;
-            position: absolute;
-            top: 0;
-            right: 0;
-            overflow: hidden;
-            background-color: rgba(139, 202, 236);
-            border-radius: 10px;
-            /* box-shadow: 5px 5px rgba(198, 198, 216, 0.929); */
-            transition: .3s;
-        }
-        .li ul li{
-            padding: 16px 24px;
-            transition: .3s;
-        }
-
-        .li:hover ul{
-            width: 228px;
-        }
-
-        .li ul li:hover{
-            background-color: rgba(139, 229, 236, 0.751);
-        }
-    </style>
 </head>
 <body>
-    <header class="banner"> 
-        <span class="title">EasyDeepLearning</span>
-    </header>
-    <nav class="shell">
-        <ul class="buttons">
-            <li class="li">
-                Layer
-                <ul>
-                    <li>Sigmoid</li>
-                    <li>ReLU</li>
-                    <li>LeakyReLU</li>
-                    <li>Tanh</li>
-                </ul>
+    <nav class="menu">
+        <div class="actionsBar">
+            <div>
+                <button id="listBtn" type="button">
+                    <i class="iconfont icon-navlist"></i>
+                </button>
+            </div>
+        </div>
+        <ul class="optionBar">
+            <li class="menuBreak">
+                <hr>
             </li>
-            <li class="li">
-                Loss
-                <ul>
-                    <li>Sigmoid</li>
-                    <li>ReLU</li>
-                    <li>LeakyReLU</li>
-                    <li>Tanh</li>
-                </ul>
+            <li class="menuItem">
+                <button class="menuOption" type="button">
+                    <i class="iconfont icon-Layers"></i>
+                    <h5 class="menuText">Layers</h5>
+                </button>
             </li>
-            <li class="li">
-                Optimizer
-                <ul>
-                    <li>Sigmoid</li>
-                    <li>ReLU</li>
-                    <li>LeakyReLU</li>
-                    <li>Tanh</li>
-                </ul>
+            <li class="menuItem">
+                <button class="menuOption" type="button">
+                    <i class="iconfont icon-load-copy"></i>
+                    <h5 class="menuText">Load</h5>
+                </button>
             </li>
-            <li class="li">
-                Metric
-                <ul>
-                    <li>Sigmoid</li>
-                    <li>ReLU</li>
-                    <li>LeakyReLU</li>
-                    <li>Tanh</li>
-                </ul>
+            <li class="menuItem">
+                <button class="menuOption" type="button">
+                    <i class="iconfont icon-save-copy"></i>
+                    <h5 class="menuText">Save</h5>
+                </button>
+            </li>
+            <li class="menuItem">
+                <button class="menuOption" type="button">
+                    <i class="iconfont icon-export"></i>
+                    <h5 class="menuText">Export</h5>
+                </button>
+            </li>
+            <li class="menuBreak">
+                <hr>
+            </li>
+            <li class="menuItem">
+                <button class="menuOption" type="button">
+                    <i class="iconfont icon-lang"></i>
+                    <h5 class="menuText">Torch/TF</h5>
+                </button>
             </li>
         </ul>
 
+        <div class="about" id="about"></div>
+        <div class="menuUser">
+            <a href="#">
+                <h5>AyaseNana</h5>
+            </a>
+        </div>
+        
     </nav>
-    
-    <article>
-        <section></section>
-    </article>
-    <aside></aside>
-    <footer></footer>
 </body>
+
+<script>
+    const menuBtn = document.getElementById('listBtn');
+    const menu = document.querySelector('.menu');
+    const menuText = document.querySelectorAll('.menuText');
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        menuText.forEach(function(text, index) {
+            setTimeout(()=>{
+                text.classList.toggle('open2');
+            }, index * 50)
+        });
+    });
+</script>
+
+
 </html>
