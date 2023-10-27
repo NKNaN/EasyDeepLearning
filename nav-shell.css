@@ -116,11 +116,11 @@ body{
     transform: translateX(-250px);
     opacity: 0;
     transition: transform .3s ease .1s;
-    text-align: left;
+    text-align: start;
 }
 
 .menu.open{
-    width: 190px;
+    width: 160px;
 }
 
 .menuText.open2{
@@ -137,7 +137,7 @@ body{
 }
 
 .menu .menuBreak hr{
-    width: 70%;
+    width: 80%;
     height: 3px;
     background-color: #fff;
     border: none;

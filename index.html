@@ -6,7 +6,17 @@
     <title>EasyDeepLearning</title>
     <link rel="stylesheet" href="./font/iconfont.css">
     <link rel="stylesheet" href="./nav-shell.css">
-
+    <style>
+        #background{
+            position: fixed;
+            left: 0;
+            right: 0;
+            background: #1c1c24d8;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
 </head>
 <body>
     <nav class="menu">
@@ -64,21 +74,23 @@
         </div>
         
     </nav>
-</body>
 
-<script>
-    const menuBtn = document.getElementById('listBtn');
-    const menu = document.querySelector('.menu');
-    const menuText = document.querySelectorAll('.menuText');
-    menuBtn.addEventListener('click', () => {
-        menu.classList.toggle('open');
-        menuText.forEach(function(text, index) {
-            setTimeout(()=>{
-                text.classList.toggle('open2');
-            }, index * 50)
+    <canvas id="background"></canvas>
+
+    <script src="./background-canvas.js"></script>
+    <script>
+        const menuBtn = document.getElementById('listBtn');
+        const menu = document.querySelector('.menu');
+        const menuText = document.querySelectorAll('.menuText');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+            menuText.forEach(function(text, index) {
+                setTimeout(()=>{
+                    text.classList.toggle('open2');
+                }, index * 50)
+            });
         });
-    });
-</script>
-
+    </script>
+</body>
 
 </html>
