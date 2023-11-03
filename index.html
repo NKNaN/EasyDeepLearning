@@ -6,12 +6,13 @@
     <title>EasyDeepLearning</title>
     <link rel="stylesheet" href="./font/iconfont.css">
     <link rel="stylesheet" href="./nav-shell.css">
+    <link rel="stylesheet" href="./aside-list.css">
     <style>
-        .canvasContainer{
+        /* .canvasContainer{
             position: absolute;
             width: 100%;
             height: 100%;
-        }
+        } */
 
         #background{
             position: fixed;
@@ -20,18 +21,39 @@
             background: #1c1c24d8;
             width: 100%;
             height: 100%;
+            z-index: 0;
+        }
+        
+        .mainCanvas{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
 
         #networkCanvas{
             position: relative;
             top: calc(100% / 7);
             left: calc(100% / 8);
-            width: calc(100% / 8 * 6);
+            width: calc(100%/ 8 * 6);
             height: calc(100% / 7 * 5);
             background-color: rgba(255, 255, 255, 0.954);
             border-radius: .5rem;
+            transition: .3s;
+        }
+
+        #networkCanvas.active{
+            position: relative;
+            top: calc(100% / 7);
+            left: calc((100% - 110px) / 8);
+            width: calc((100% - 110px) / 8 * 6);
+            height: calc(100% / 7 * 5);
+            background-color: rgba(255, 255, 255, 0.954);
+            border-radius: .5rem;
+            transition: .3s;
         }
     </style>
+
     
 </head>
 <body>
@@ -90,14 +112,130 @@
         </div>
     </nav>
 
-    <div class="canvasContainer">
-        <canvas id="background"></canvas>
-        <canvas id="networkCanvas"></canvas>
-    </div>
+    <div class="mainCanvas">
+        <div id="networkCanvas"></div>
 
+        <aside>
+            <div class="layerListContainer">
+                <ul class="layerList">
+                    <li class="llBreak">
+                        <hr>
+                    </li>
+
+                    <li class="layer">
+                        <div class="subtitle">Convolution</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.conv1d</li>
+                            <li class="layerrow">nn.conv2d</li>
+                            <li class="layerrow">nn.conv3d</li>
+                        </ul>
+                    </li>
+
+                    <li class="layer">
+                        <div class="subtitle">Pooling</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.MaxPool1d</li>
+                            <li class="layerrow">nn.MaxPool2d</li>
+                            <li class="layerrow">nn.MaxPool3d</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Padding</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.ZeroPad1d</li>
+                            <li class="layerrow">nn.ZeroPad2d</li>
+                            <li class="layerrow">nn.ZeroPad3d</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Activition</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.ELU</li>
+                            <li class="layerrow">nn.Hardshrink</li>
+                            <li class="layerrow">nn.Hardsigmoid</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Normalization</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.BatchNorm1d</li>
+                            <li class="layerrow">nn.BatchNorm2d</li>
+                            <li class="layerrow">nn.BatchNorm3d</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Recurrent</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.RNN</li>
+                            <li class="layerrow">nn.LSTM</li>
+                            <li class="layerrow">nn.GRU</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Transformer</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.Transformer</li>
+                            <li class="layerrow">nn.TransformerEncoder</li>
+                            <li class="layerrow">nn.TransformerDecoder</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Linear</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.Identity</li>
+                            <li class="layerrow">nn.Linear</li>
+                            <li class="layerrow">nn.Bilinear</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Dropout</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.Dropout</li>
+                            <li class="layerrow">nn.Dropout1d</li>
+                            <li class="layerrow">nn.Dropout2d</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Sparse</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.Embedding</li>
+                            <li class="layerrow">nn.EmbeddingBag</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Distance</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.CosineSimilarity</li>
+                            <li class="layerrow">nn.PairwiseDistance</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Loss</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.L1Loss</li>
+                            <li class="layerrow">nn.MSELoss</li>
+                        </ul>
+                    </li>
+                    <li class="layer">
+                        <div class="subtitle">Vision</div>
+                        <ul class="subLayerList">
+                            <li class="layerrow">nn.PixelShuffle</li>
+                            <li class="layerrow">nn.PixelUnshuffle</li>
+                        </ul>
+                    </li>
+
+                    <li class="llBreak">
+                        <hr>
+                    </li>
+                </ul>
+            </div>    
+        </aside>
+    </div>
+    
+    <canvas id="background"></canvas>
 </body>
 <script src="./background-canvas.js"></script>
-<script src="./network-canvas.js"></script>
+<!-- <script src="./network-canvas.js"></script> -->
 <script src="./menu.js"></script>
 
 </html>

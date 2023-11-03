@@ -6,7 +6,7 @@ function init() {
     nnCvs.height = window.innerHeight / 7 * 5 * devicePixelRatio;
 }
 
-init();
+// init();
 
 class Layer{
     constructor() {

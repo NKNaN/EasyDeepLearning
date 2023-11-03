@@ -1,0 +1,148 @@
+aside{
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    right: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: .3s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial ;
+}
+
+aside.active{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    background-color: rgb(17, 24, 39);
+    border-radius: 50% 0 0 50%;
+    overflow: hidden;
+    visibility: visible;
+    transition: .3s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial ;
+}
+
+aside.active:hover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 2;
+    background-color: rgb(17, 24, 39);
+    border-radius: 0;
+    overflow: hidden;
+    visibility: visible;
+    transition: .3s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial ;
+}
+
+.layerListContainer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layerList {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+}
+
+.layerList::-webkit-scrollbar {
+    width: 5px;
+}
+
+.layerList::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+.layerList::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #535353a5;
+}
+
+.layerList::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #ededed;
+}
+
+.layerListContainer .llBreak{
+    width: 100%;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layerListContainer .llBreak hr{
+    width: 50%;
+    height: 3px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.layerListContainer .layer{
+    height: fit-content;
+    color: #fff;
+    padding: 5px;
+    margin: auto;
+    list-style: none;
+    cursor: pointer;
+}
+
+.layer div{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    height: 30px;
+    padding: 5px;
+    border-radius: .3rem;
+    transform: translateX(255px);
+    transition: transform .3s;
+    opacity: 0;
+}
+
+.layer div.active{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.layer div:hover{
+    background-color: #364152;
+    transition: .3s;
+}
+.subLayerList{
+    font-size: 0.9rem;
+    list-style: none;
+}
+
+.subLayerList li{
+    height: 0;
+    text-align: center;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.subLayerList li.active{
+    color: rgba(237, 202, 127, 0.8);
+    height: 30px;
+    padding: 1px;
+    border-radius: .3rem;
+    text-align: center;
+    transition: transform .3s;
+    transition: 0.2s;
+    opacity: 1;
+}
+
+.subLayerList li.active:hover{
+    background-color: #364152;
+}
